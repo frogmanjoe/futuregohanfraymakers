@@ -27,10 +27,9 @@
     {
       "$id": "3da09cc1-743b-45f5-88d2-8ad26057d611",
       "layers": [
-        "edc571d2-2cf1-4726-a53d-65fb4598c0e9",
-        "e0770597-4c2b-4ec0-b15a-50609f52c120",
-        "2c0f902b-3fe0-4fa7-b4ae-c9bbb86247ae",
-        "3ec32d88-61bf-4c7d-a63e-94694e1bd935"
+        "aabb35f6-811e-424c-807a-8fb6c22dba2f",
+        "9614863f-fa91-405e-8729-ffb24af8710f",
+        "71d73341-9dcf-4889-ac55-716ce3ba2248"
       ],
       "name": "stand",
       "pluginMetadata": {
@@ -1617,36 +1616,6 @@
       "type": "IMAGE"
     },
     {
-      "$id": "86660c12-6930-463d-b28f-0ffdda7b702e",
-      "length": 210,
-      "pluginMetadata": {
-      },
-      "symbol": "8fc0c15f-ae54-449d-9ffa-d2d5fa0b46ca",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "ca4ed889-1775-4e66-a221-c9363643d24b",
-      "length": 69,
-      "pluginMetadata": {
-      },
-      "symbol": "91853ff2-16e3-4438-946b-cdf9ecb2cec9",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "55c7303f-51cc-4b4c-be57-1986fc2202ab",
-      "length": 210,
-      "pluginMetadata": {
-      },
-      "symbol": "31407126-ce5d-4aec-b6ad-819c63200667",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "COLLISION_BOX"
-    },
-    {
       "$id": "166a5668-e8c7-4720-bc0b-bd77fe3c78e7",
       "code": "//TEAM FRAY NOTE - standard length for this animation is 75 frames. You can make it shorter if you'd like, and as soon as it ends it will jump to the character's \"stand\" animation. Anything longer than 75 frames gets cut off by \"stand\" at the 75th frame (which is when the match starts and the character becomes actionable).",
       "length": 1,
@@ -2273,30 +2242,6 @@
       "tweenType": "LINEAR",
       "tweened": false,
       "type": "IMAGE"
-    },
-    {
-      "$id": "3a3edd60-1408-42d6-a792-123ba1a1a6dd",
-      "code": "//TEAM FRAY NOTE - Fraymakers' implementation for blinking is contained within the same timeline and uses random number checks for more natural blink variation. You could also use this type of timeline code to easily implement separate \"waiting\" motions for the character. ",
-      "length": 1,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
-    },
-    {
-      "$id": "0e313e3e-a274-492e-8b19-3eff241f4aef",
-      "code": "//blink 1\r\n\r\n//Generates a number between 0 and 1, if the value is greater than or equal to .20 it jumps back to the start of the stand animation. Basically, a 1/5th chance that the timeline will continue forward into the first blink.\r\nif(Random.getValue() >= .20){ \r\n  self.playFrame(1);\r\n}",
-      "length": 1,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
-    },
-    {
-      "$id": "05ddaef2-e689-4251-9639-b57d4150e2e7",
-      "code": "",
-      "length": 70,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
     },
     {
       "$id": "59706f16-732a-4a0e-ab4a-3f5b7d980fa1",
@@ -6409,142 +6354,6 @@
       "tweenType": "LINEAR",
       "tweened": false,
       "type": "COLLISION_BOX"
-    },
-    {
-      "$id": "e81b61aa-399f-4833-9c8a-abb32c9a8f85",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "03862b52-a7b2-4470-ac60-46f2acbd4f04",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "8f0bb0c4-3e9d-449b-9ae5-cdfc89fc4878",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "a2c5fe9e-5172-4ab9-83f0-5f6dda0182b3",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "d2907e81-fcfa-435f-bc5e-3847a3710c02",
-      "length": 65,
-      "pluginMetadata": {
-      },
-      "symbol": "a887130f-a797-46c0-848c-15cc3e7fdd4c",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "372bdb67-e3a9-49da-adc4-ff55541e6520",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "d287541c-84fe-495e-86d9-31cd49d10d4b",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "f0aaad57-2707-454c-a726-8b5863cddab0",
-      "code": "//blink 2\r\n\r\n//Generates a number between 0 and 1, if the value is greater than or equal to .25 it jumps back to the start of the stand animation. Basically, a 1/4th chance that the timeline will continue forward into the second blink. Compounded with the probability from the first blink, there's a 1/20th chance you will reach the second blink. You can configure this logic to affect the probability however you'd like, or consider other options like omitting the code altogether for a standard loop or implement your own blinking/waiting system.\r\n\r\nif(Random.getValue() >= .25){ \r\n  self.playFrame(1);\r\n}\r\n",
-      "length": 1,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
-    },
-    {
-      "$id": "1e28a1fb-fde8-4b9e-a83b-f1797014af1e",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "0eee6928-af38-49a8-9588-02b19c30d4d2",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "96252da1-8ada-4884-adff-9943b30a1b56",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "910a8f7c-2bc9-451b-8dc2-62bcc7e7b34d",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "32957c85-9188-4134-b613-e2dcbc199842",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "da65b59d-ed88-4570-acc6-3efacdae073e",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "1cd7f88a-d8f4-42ed-aa15-e092a027306f",
-      "length": 9,
-      "pluginMetadata": {
-      },
-      "symbol": "fb3ade0a-23bb-4099-b5a6-6ba039dc701f",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "f45c7961-3e7a-47eb-8c61-8bc7da78ba81",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "456cfaaf-1acd-4d2f-a355-22ec6ea1cfcb",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "41f369fe-6e82-4e6f-a46c-2ed8616186f0",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "3add9d20-266c-43fd-b8c8-79a128eb60b1",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "5e43a82a-b378-4fca-9041-065d0d49acb2",
-      "length": 2,
-      "pluginMetadata": {
-      },
-      "symbol": "81f6e215-16a3-4f5f-8135-96512e176613",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "ade0a8f9-e032-4b0f-aeef-9ebff6703768",
-      "length": 49,
-      "pluginMetadata": {
-      },
-      "symbol": "ed43eb87-3b4d-4b6d-9a6c-43cc2e42465c",
-      "tweenType": "LINEAR",
-      "tweened": false,
-      "type": "IMAGE"
-    },
-    {
-      "$id": "ad3c1d8d-8d83-450c-bc1c-ce6b2fbdc462",
-      "code": "",
-      "length": 69,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
     },
     {
       "$id": "aa2e9c2c-b42e-42eb-8bed-e4ca5282b5c3",
@@ -41565,14 +41374,6 @@
       "type": "FRAME_SCRIPT"
     },
     {
-      "$id": "2b0fc38a-5aa6-4b5e-b671-2b66dfcd3393",
-      "code": "",
-      "length": 68,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
-    },
-    {
       "$id": "aa98e180-23c1-4540-a792-ac42e742a6fa",
       "code": "//TEAM FRAY NOTE - animate this with the character moving from facing left to facing right.",
       "length": 1,
@@ -43161,6 +42962,64 @@
       "tweenType": "LINEAR",
       "tweened": false,
       "type": "IMAGE"
+    },
+    {
+      "$id": "b3a1280e-9376-499a-bb6e-47a0449aa2bd",
+      "length": 1,
+      "pluginMetadata": {
+      },
+      "symbol": "4d0369d7-fe93-4f9d-a640-012ae90206ce",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "1cca8647-ff4d-4a95-b7fe-1cd6df8cd12f",
+      "length": 5,
+      "pluginMetadata": {
+      },
+      "symbol": "21068253-6584-470d-9aa7-89659002f19d",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "IMAGE"
+    },
+    {
+      "$id": "8bbeaa9d-9f69-412b-a6fb-d6ebda4d5ed2",
+      "code": "",
+      "length": 1,
+      "pluginMetadata": {
+      },
+      "type": "FRAME_SCRIPT"
+    },
+    {
+      "$id": "2f983d45-6c4f-4747-b67a-886a02ab6fd9",
+      "length": 5,
+      "pluginMetadata": {
+      },
+      "symbol": "3b9b0321-ba07-4318-be4e-c8c0aa01fff5",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "IMAGE"
+    },
+    {
+      "$id": "403770a5-48e0-4d4c-9876-dd6f6c97bd4b",
+      "length": 5,
+      "pluginMetadata": {
+      },
+      "symbol": "3ee1526f-1516-43cf-8466-728682f6a191",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "IMAGE"
+    },
+    {
+      "$id": "407202c8-cd18-441c-930e-dd640a7b84ca",
+      "length": 5,
+      "pluginMetadata": {
+      },
+      "symbol": "ffb15c14-25ae-47b5-95de-1a7f02b2bb70",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "IMAGE"
     }
   ],
   "layers": [
@@ -43237,60 +43096,6 @@
       "pluginMetadata": {
       },
       "type": "IMAGE"
-    },
-    {
-      "$id": "edc571d2-2cf1-4726-a53d-65fb4598c0e9",
-      "hidden": false,
-      "keyframes": [
-        "86660c12-6930-463d-b28f-0ffdda7b702e"
-      ],
-      "locked": false,
-      "name": "Image Layer",
-      "pluginMetadata": {
-      },
-      "type": "IMAGE"
-    },
-    {
-      "$id": "e0770597-4c2b-4ec0-b15a-50609f52c120",
-      "hidden": false,
-      "keyframes": [
-        "ca4ed889-1775-4e66-a221-c9363643d24b",
-        "e81b61aa-399f-4833-9c8a-abb32c9a8f85",
-        "8f0bb0c4-3e9d-449b-9ae5-cdfc89fc4878",
-        "372bdb67-e3a9-49da-adc4-ff55541e6520",
-        "d2907e81-fcfa-435f-bc5e-3847a3710c02",
-        "1e28a1fb-fde8-4b9e-a83b-f1797014af1e",
-        "96252da1-8ada-4884-adff-9943b30a1b56",
-        "32957c85-9188-4134-b613-e2dcbc199842",
-        "1cd7f88a-d8f4-42ed-aa15-e092a027306f",
-        "f45c7961-3e7a-47eb-8c61-8bc7da78ba81",
-        "41f369fe-6e82-4e6f-a46c-2ed8616186f0",
-        "5e43a82a-b378-4fca-9041-065d0d49acb2",
-        "ade0a8f9-e032-4b0f-aeef-9ebff6703768"
-      ],
-      "locked": false,
-      "name": "Image Layer",
-      "pluginMetadata": {
-      },
-      "type": "IMAGE"
-    },
-    {
-      "$id": "2c0f902b-3fe0-4fa7-b4ae-c9bbb86247ae",
-      "defaultAlpha": 0.5,
-      "defaultColor": "0x000000",
-      "hidden": false,
-      "keyframes": [
-        "55c7303f-51cc-4b4c-be57-1986fc2202ab"
-      ],
-      "locked": false,
-      "name": "hurtbox0",
-      "pluginMetadata": {
-        "com.fraymakers.FraymakersMetadata": {
-          "collisionBoxType": "HURT_BOX",
-          "index": 0
-        }
-      },
-      "type": "COLLISION_BOX"
     },
     {
       "$id": "8cd4fddb-3b29-4cc0-bcd1-6568c2f58b3e",
@@ -46301,24 +46106,6 @@
       "pluginMetadata": {
       },
       "type": "IMAGE"
-    },
-    {
-      "$id": "3ec32d88-61bf-4c7d-a63e-94694e1bd935",
-      "hidden": false,
-      "keyframes": [
-        "3a3edd60-1408-42d6-a792-123ba1a1a6dd",
-        "2b0fc38a-5aa6-4b5e-b671-2b66dfcd3393",
-        "0e313e3e-a274-492e-8b19-3eff241f4aef",
-        "05ddaef2-e689-4251-9639-b57d4150e2e7",
-        "f0aaad57-2707-454c-a726-8b5863cddab0",
-        "ad3c1d8d-8d83-450c-bc1c-ce6b2fbdc462"
-      ],
-      "language": "hscript",
-      "locked": false,
-      "name": "Frame Script Layer",
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
     },
     {
       "$id": "c2ad2168-9460-422b-af22-439ef5338c2a",
@@ -55625,6 +55412,48 @@
       "pluginMetadata": {
       },
       "type": "IMAGE"
+    },
+    {
+      "$id": "aabb35f6-811e-424c-807a-8fb6c22dba2f",
+      "hidden": false,
+      "keyframes": [
+        "1cca8647-ff4d-4a95-b7fe-1cd6df8cd12f",
+        "2f983d45-6c4f-4747-b67a-886a02ab6fd9",
+        "403770a5-48e0-4d4c-9876-dd6f6c97bd4b",
+        "407202c8-cd18-441c-930e-dd640a7b84ca"
+      ],
+      "locked": false,
+      "name": "Image Layer",
+      "pluginMetadata": {
+      },
+      "type": "IMAGE"
+    },
+    {
+      "$id": "9614863f-fa91-405e-8729-ffb24af8710f",
+      "defaultAlpha": 0.5,
+      "defaultColor": "0x000000",
+      "hidden": false,
+      "keyframes": [
+        "b3a1280e-9376-499a-bb6e-47a0449aa2bd"
+      ],
+      "locked": false,
+      "name": "Collision Box Layer",
+      "pluginMetadata": {
+      },
+      "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "71d73341-9dcf-4889-ac55-716ce3ba2248",
+      "hidden": false,
+      "keyframes": [
+        "8bbeaa9d-9f69-412b-a6fb-d6ebda4d5ed2"
+      ],
+      "language": "hscript",
+      "locked": false,
+      "name": "Frame Script Layer",
+      "pluginMetadata": {
+      },
+      "type": "FRAME_SCRIPT"
     }
   ],
   "paletteMap": {
@@ -55641,51 +55470,6 @@
     "com.fraymakers.FraymakersMetadata"
   ],
   "symbols": [
-    {
-      "$id": "8fc0c15f-ae54-449d-9ffa-d2d5fa0b46ca",
-      "alpha": 1,
-      "imageAsset": "3faba224-c974-494c-a2aa-12815159a214",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "91853ff2-16e3-4438-946b-cdf9ecb2cec9",
-      "alpha": 1,
-      "imageAsset": "f97f706c-43aa-46a5-b4a0-de809a1965c2",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "31407126-ce5d-4aec-b6ad-819c63200667",
-      "alpha": 0.5,
-      "color": "0xfcba03",
-      "pivotX": 25.5,
-      "pivotY": 43,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 51,
-      "scaleY": 86,
-      "type": "COLLISION_BOX",
-      "x": -26,
-      "y": -86
-    },
     {
       "$id": "6d3257d5-97fe-4f40-b507-b6ef2479bd56",
       "alpha": 0.5,
@@ -61291,186 +61075,6 @@
       "type": "COLLISION_BOX",
       "x": -43.00000000000001,
       "y": -50.000000000000014
-    },
-    {
-      "$id": "03862b52-a7b2-4470-ac60-46f2acbd4f04",
-      "alpha": 1,
-      "imageAsset": "3aef25d8-3337-4cca-94ba-979e22a8e2b6",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "a2c5fe9e-5172-4ab9-83f0-5f6dda0182b3",
-      "alpha": 1,
-      "imageAsset": "d40fdf3b-3b05-4a58-a9d1-d5a1da954c47",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "a887130f-a797-46c0-848c-15cc3e7fdd4c",
-      "alpha": 1,
-      "imageAsset": "f97f706c-43aa-46a5-b4a0-de809a1965c2",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "d287541c-84fe-495e-86d9-31cd49d10d4b",
-      "alpha": 1,
-      "imageAsset": "3aef25d8-3337-4cca-94ba-979e22a8e2b6",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "0eee6928-af38-49a8-9588-02b19c30d4d2",
-      "alpha": 1,
-      "imageAsset": "3aef25d8-3337-4cca-94ba-979e22a8e2b6",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "910a8f7c-2bc9-451b-8dc2-62bcc7e7b34d",
-      "alpha": 1,
-      "imageAsset": "d40fdf3b-3b05-4a58-a9d1-d5a1da954c47",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "da65b59d-ed88-4570-acc6-3efacdae073e",
-      "alpha": 1,
-      "imageAsset": "3aef25d8-3337-4cca-94ba-979e22a8e2b6",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "fb3ade0a-23bb-4099-b5a6-6ba039dc701f",
-      "alpha": 1,
-      "imageAsset": "f97f706c-43aa-46a5-b4a0-de809a1965c2",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "456cfaaf-1acd-4d2f-a355-22ec6ea1cfcb",
-      "alpha": 1,
-      "imageAsset": "3aef25d8-3337-4cca-94ba-979e22a8e2b6",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "3add9d20-266c-43fd-b8c8-79a128eb60b1",
-      "alpha": 1,
-      "imageAsset": "d40fdf3b-3b05-4a58-a9d1-d5a1da954c47",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "81f6e215-16a3-4f5f-8135-96512e176613",
-      "alpha": 1,
-      "imageAsset": "3aef25d8-3337-4cca-94ba-979e22a8e2b6",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
-    },
-    {
-      "$id": "ed43eb87-3b4d-4b6d-9a6c-43cc2e42465c",
-      "alpha": 1,
-      "imageAsset": "f97f706c-43aa-46a5-b4a0-de809a1965c2",
-      "pivotX": 26,
-      "pivotY": 86,
-      "pluginMetadata": {
-      },
-      "rotation": 0,
-      "scaleX": 1,
-      "scaleY": 1,
-      "type": "IMAGE",
-      "x": -26,
-      "y": -86
     },
     {
       "$id": "e0c426f7-f640-421d-bddf-74b9354ed47a",
@@ -106789,6 +106393,81 @@
       "type": "IMAGE",
       "x": -19,
       "y": -86
+    },
+    {
+      "$id": "4d0369d7-fe93-4f9d-a640-012ae90206ce",
+      "alpha": null,
+      "color": null,
+      "pivotX": 50,
+      "pivotY": 50,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 100,
+      "scaleY": 100,
+      "type": "COLLISION_BOX",
+      "x": -50,
+      "y": -50
+    },
+    {
+      "$id": "21068253-6584-470d-9aa7-89659002f19d",
+      "alpha": 1,
+      "imageAsset": "baca9562-0d98-4f72-a92f-d1b9673af6c7",
+      "pivotX": 50,
+      "pivotY": 100,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "type": "IMAGE",
+      "x": -45,
+      "y": -115
+    },
+    {
+      "$id": "3b9b0321-ba07-4318-be4e-c8c0aa01fff5",
+      "alpha": 1,
+      "imageAsset": "0ff1e0d1-7379-46b3-9104-69afcc6cfafc",
+      "pivotX": 50,
+      "pivotY": 100,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "type": "IMAGE",
+      "x": -45,
+      "y": -115
+    },
+    {
+      "$id": "3ee1526f-1516-43cf-8466-728682f6a191",
+      "alpha": 1,
+      "imageAsset": "5d449882-6057-4abc-bae9-7161ea5964bf",
+      "pivotX": 50,
+      "pivotY": 100,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "type": "IMAGE",
+      "x": -45,
+      "y": -115
+    },
+    {
+      "$id": "ffb15c14-25ae-47b5-95de-1a7f02b2bb70",
+      "alpha": 1,
+      "imageAsset": "1be68b02-197b-4978-9fa7-9f99e1587ed5",
+      "pivotX": 50,
+      "pivotY": 100,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 1,
+      "scaleY": 1,
+      "type": "IMAGE",
+      "x": -45,
+      "y": -115
     }
   ],
   "tags": [
