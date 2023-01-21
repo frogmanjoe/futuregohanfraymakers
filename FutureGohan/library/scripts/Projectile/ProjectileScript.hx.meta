@@ -1,0 +1,18 @@
+{
+  "export": true,
+  "guid": "06fd341b-edde-4221-8179-e54e6e8679a2",
+  "id": "charactertemplateNspecProjectileScript",
+  "language": "hscript",
+  "pluginMetadata": {
+    "com.fraymakers.FraymakersMetadata": {
+      "objectType": "PROJECTILE",
+      "version": "0.1.1"
+    }
+  },
+  "plugins": [
+    "com.fraymakers.FraymakersMetadata"
+  ],
+  "tags": [
+  ],
+  "version": 1
+}

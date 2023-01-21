@@ -1,0 +1,16 @@
+{
+  "export": true,
+  "guid": "2a53bdac-c60b-4fcd-a21c-800c882648ce",
+  "id": "charactertemplateAnimationStats",
+  "language": "hscript",
+  "pluginMetadata": {
+    "com.fraymakers.FraymakersMetadata": {
+      "version": "0.1.0"
+    }
+  },
+  "plugins": [
+  ],
+  "tags": [
+  ],
+  "version": 1
+}
