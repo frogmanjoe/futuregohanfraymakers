@@ -3,6 +3,9 @@
   "guid": "a61394fb-a73c-4a2b-898e-a162ca9fc30f",
   "id": "jump1",
   "pluginMetadata": {
+    "com.fraymakers.FraymakersMetadata": {
+      "version": "0.1.2"
+    }
   },
   "plugins": [
     "com.fraymakers.FraymakersMetadata"
