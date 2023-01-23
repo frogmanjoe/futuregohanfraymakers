@@ -189,7 +189,9 @@
       "layers": [
         "b2ea481c-a892-44c9-a9f7-2336daf3d478",
         "290e941f-295c-446f-a2c9-91018f7d2162",
-        "f79e1e58-767c-43e7-87f6-6a119e9b6312"
+        "f79e1e58-767c-43e7-87f6-6a119e9b6312",
+        "148f0fd2-fd2a-4cbb-85b2-3d51b8db5e6c",
+        "8ba49cd5-fb30-470f-89ba-b433cc8483c7"
       ],
       "name": "jump_out",
       "pluginMetadata": {
@@ -1724,7 +1726,7 @@
     {
       "$id": "c965b364-0207-4af5-b3df-088dc73e28cb",
       "code": "",
-      "length": 4,
+      "length": 3,
       "pluginMetadata": {
       },
       "type": "FRAME_SCRIPT"
@@ -4543,14 +4545,6 @@
       "$id": "8f74cf13-b5ea-4396-b4b0-5248b0d5ac37",
       "code": "",
       "length": 3,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
-    },
-    {
-      "$id": "82a86bb3-2296-44b3-869c-42a35e5deea5",
-      "code": "//TEAM FRAY NOTE - place the below script at the point in your crouch where you'd like to allow tapping down during \"crouch_out\" to jump to \"crouch_in\". This functionality allows crouches in quick succession to feel snappy. \r\nCommon.allowJumpToCrouchIn();",
-      "length": 1,
       "pluginMetadata": {
       },
       "type": "FRAME_SCRIPT"
@@ -37674,7 +37668,7 @@
     {
       "$id": "065b1763-44fb-4938-bd28-7f85e842266a",
       "code": "",
-      "length": 16,
+      "length": 8,
       "pluginMetadata": {
       },
       "type": "FRAME_SCRIPT"
@@ -40238,14 +40232,6 @@
       "type": "IMAGE"
     },
     {
-      "$id": "d3281e4a-671e-4581-8eed-ef8b3cdf7f27",
-      "code": "AudioClip.play(\"fgohancharging\");",
-      "length": 1,
-      "pluginMetadata": {
-      },
-      "type": "FRAME_SCRIPT"
-    },
-    {
       "$id": "e9860667-5296-422d-a6bf-bd20e2a1c3f6",
       "length": 4,
       "pluginMetadata": {
@@ -40444,6 +40430,50 @@
       "tweenType": "LINEAR",
       "tweened": false,
       "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "227eae46-4483-443c-8bb3-8ca475e20d11",
+      "length": 3,
+      "pluginMetadata": {
+      },
+      "symbol": "2f25b539-a622-4dcf-acc9-75f6617f5916",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "32d86b24-ec64-4c6d-a695-5f43c7cd2569",
+      "length": 3,
+      "pluginMetadata": {
+      },
+      "symbol": "7b17e0e4-13b3-4cab-a402-2b9c129da0f7",
+      "tweenType": "LINEAR",
+      "tweened": false,
+      "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "b3e9bf52-6c1f-48af-bc55-db47903254ab",
+      "code": "",
+      "length": 1,
+      "pluginMetadata": {
+      },
+      "type": "FRAME_SCRIPT"
+    },
+    {
+      "$id": "e28ea3d8-a4af-4027-8f36-45db4cc7d4a4",
+      "code": "//TEAM FRAY NOTE - place the below script at the point in your crouch where you'd like to allow tapping down during \"crouch_out\" to jump to \"crouch_in\". This functionality allows crouches in quick succession to feel snappy. \r\nCommon.allowJumpToCrouchIn();",
+      "length": 1,
+      "pluginMetadata": {
+      },
+      "type": "FRAME_SCRIPT"
+    },
+    {
+      "$id": "7fe41942-4536-4c30-bb05-94950cb738c7",
+      "code": "AudioClip.play(\"fgohancharging\");",
+      "length": 1,
+      "pluginMetadata": {
+      },
+      "type": "FRAME_SCRIPT"
     }
   ],
   "layers": [
@@ -40527,7 +40557,7 @@
       "keyframes": [
         "166a5668-e8c7-4720-bc0b-bd77fe3c78e7",
         "065b1763-44fb-4938-bd28-7f85e842266a",
-        "d3281e4a-671e-4581-8eed-ef8b3cdf7f27"
+        "7fe41942-4536-4c30-bb05-94950cb738c7"
       ],
       "language": "hscript",
       "locked": false,
@@ -41038,7 +41068,8 @@
       "hidden": false,
       "keyframes": [
         "c965b364-0207-4af5-b3df-088dc73e28cb",
-        "82a86bb3-2296-44b3-869c-42a35e5deea5",
+        "e28ea3d8-a4af-4027-8f36-45db4cc7d4a4",
+        "b3e9bf52-6c1f-48af-bc55-db47903254ab",
         "abdc5df1-23ac-40ed-ae42-93245903a900"
       ],
       "language": "hscript",
@@ -52499,7 +52530,7 @@
       "keyframes": [
         "751bc214-9400-45df-b1db-4b62870a0980"
       ],
-      "locked": true,
+      "locked": false,
       "name": "hurtbox0",
       "pluginMetadata": {
         "com.fraymakers.FraymakersMetadata": {
@@ -52534,6 +52565,42 @@
       "hidden": false,
       "keyframes": [
         "37caa666-1d12-4dc7-aa31-16dabaffe032"
+      ],
+      "locked": false,
+      "name": "hurtbox0",
+      "pluginMetadata": {
+        "com.fraymakers.FraymakersMetadata": {
+          "collisionBoxType": "HURT_BOX",
+          "index": 0
+        }
+      },
+      "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "148f0fd2-fd2a-4cbb-85b2-3d51b8db5e6c",
+      "defaultAlpha": 0.5,
+      "defaultColor": "0xf5e042",
+      "hidden": false,
+      "keyframes": [
+        "32d86b24-ec64-4c6d-a695-5f43c7cd2569"
+      ],
+      "locked": false,
+      "name": "hurtbox0",
+      "pluginMetadata": {
+        "com.fraymakers.FraymakersMetadata": {
+          "collisionBoxType": "HURT_BOX",
+          "index": 0
+        }
+      },
+      "type": "COLLISION_BOX"
+    },
+    {
+      "$id": "8ba49cd5-fb30-470f-89ba-b433cc8483c7",
+      "defaultAlpha": 0.5,
+      "defaultColor": "0xf5e042",
+      "hidden": false,
+      "keyframes": [
+        "227eae46-4483-443c-8bb3-8ca475e20d11"
       ],
       "locked": false,
       "name": "hurtbox0",
@@ -82253,22 +82320,22 @@
       "alpha": null,
       "color": null,
       "pivotX": 50,
-      "pivotY": 25,
+      "pivotY": 20,
       "pluginMetadata": {
       },
       "rotation": 0,
-      "scaleX": 100,
-      "scaleY": 50,
+      "scaleX": 103,
+      "scaleY": 40,
       "type": "COLLISION_BOX",
-      "x": -50,
-      "y": -112
+      "x": -51.5,
+      "y": -114
     },
     {
       "$id": "284ac0f0-320d-4902-b1fa-75b3265d50a5",
       "alpha": null,
       "color": null,
-      "pivotX": 50,
-      "pivotY": 25,
+      "pivotX": 52,
+      "pivotY": 20,
       "pluginMetadata": {
       },
       "rotation": 0,
@@ -99612,7 +99679,7 @@
       "scaleY": 106,
       "type": "COLLISION_BOX",
       "x": -21,
-      "y": -98
+      "y": -97
     },
     {
       "$id": "0c9bb855-1131-42f0-a9f9-37b1c023ed16",
@@ -99642,7 +99709,7 @@
       "scaleY": 106,
       "type": "COLLISION_BOX",
       "x": -21,
-      "y": -98
+      "y": -97
     },
     {
       "$id": "5e8322dc-7a8f-4d1a-bffb-83a4cbb711e7",
@@ -99673,6 +99740,36 @@
       "type": "COLLISION_BOX",
       "x": -21,
       "y": -98
+    },
+    {
+      "$id": "2f25b539-a622-4dcf-acc9-75f6617f5916",
+      "alpha": null,
+      "color": null,
+      "pivotX": 12,
+      "pivotY": 8,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 22,
+      "scaleY": 20,
+      "type": "COLLISION_BOX",
+      "x": -1,
+      "y": -104
+    },
+    {
+      "$id": "7b17e0e4-13b3-4cab-a402-2b9c129da0f7",
+      "alpha": null,
+      "color": null,
+      "pivotX": 16,
+      "pivotY": 51,
+      "pluginMetadata": {
+      },
+      "rotation": 0,
+      "scaleX": 35,
+      "scaleY": 102,
+      "type": "COLLISION_BOX",
+      "x": -20,
+      "y": -101
     }
   ],
   "tags": [
